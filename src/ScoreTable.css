@@ -1,0 +1,12 @@
+table{
+    margin-top: 20px;
+    width : 80%;
+    margin : 0 auto;
+    color: grey;
+}
+
+td, th,tr {
+    border: 1px solid grey;
+    margin : 0 auto;
+}
+
