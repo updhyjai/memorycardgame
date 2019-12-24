@@ -19,3 +19,7 @@ You will also see any lint errors in the console.
 ### `node src/server/server.js`
 
 Runs the server at (http://localhost:8000)
+
+### 'npm test'
+
+Run the tests created
