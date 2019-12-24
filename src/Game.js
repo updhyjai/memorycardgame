@@ -26,7 +26,6 @@ class Game extends Component {
     fetch('http://localhost:8000/getscore')
     .then(res=>res.json())
     .then(scores=>{
-      console.log(scores);
       this.setState({
         result: scores
       })
@@ -52,7 +51,6 @@ class Game extends Component {
     fetch('http://localhost:8000/draw')
       .then((response) => response.json())
       .then((deck) => {
-        console.log(deck);
         let cards = deck.cards;
         this.setState({
           deck1: cards,
@@ -68,11 +66,11 @@ class Game extends Component {
   componentDidMount() {
     this.DECK1 = document.getElementsByClassName('d1')[0];
     this.DECK2 = document.getElementsByClassName('d2')[0];
-    console.log(this.DECK2)
+    // console.log(this.DECK2)
     if(this.DECK2){
       this.DECK2.style.pointerEvents = 'none';
     }else{
-      console.log('this.deck2', this.DECK2);
+      // console.log('this.deck2', this.DECK2);
     }
     
   }
