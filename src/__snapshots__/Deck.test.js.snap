@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The deck of cards display list of cards 1`] = `
+Array [
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="6C"
+      src="https://deckofcardsapi.com/static/img/6C.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="9D"
+      src="https://deckofcardsapi.com/static/img/9D.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="0S"
+      src="https://deckofcardsapi.com/static/img/0S.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="2C"
+      src="https://deckofcardsapi.com/static/img/2C.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="7H"
+      src="https://deckofcardsapi.com/static/img/7H.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="QH"
+      src="https://deckofcardsapi.com/static/img/QH.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="AS"
+      src="https://deckofcardsapi.com/static/img/AS.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="JD"
+      src="https://deckofcardsapi.com/static/img/JD.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+  <div
+    className="cards"
+    onClick={[Function]}
+  >
+    <img
+      alt="7D"
+      src="https://deckofcardsapi.com/static/img/7D.png"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </div>,
+]
+`;

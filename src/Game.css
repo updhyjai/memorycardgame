@@ -64,12 +64,19 @@ main{
   text-align : center;
 }
 
-.button{
+.buttons, .buttons :visited, .buttons:active, .buttons:focus{
   font-size: 20px;
   border: 1px solid grey;
   background: none;
   color: grey;
   padding: 5px;
   margin: 10px;
+}
+
+
+
+ .buttons:hover{
+  color: 282c34;
+  background-color: whitesmoke;
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Game.css';
 import ScoreTable from './ScoreTable';
 import Deck from './Deck';
 
@@ -19,7 +19,6 @@ class Game extends Component {
   handleResetScore(){
     fetch('http://localhost:8000/resetscore')
     .then(res=>{
-      console.log(res);
       this.getScore();
     })
   }
@@ -50,7 +49,7 @@ class Game extends Component {
   }
 
   initialize() {
-    fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=9')
+    fetch('http://localhost:8000/draw')
       .then((response) => response.json())
       .then((deck) => {
         console.log(deck);
@@ -61,7 +60,6 @@ class Game extends Component {
           turns: 0,
           setCount: 9,
           totalMatch: 0,         
-        //   result: scores,
           lastCard: null,
         });
       });
@@ -70,7 +68,13 @@ class Game extends Component {
   componentDidMount() {
     this.DECK1 = document.getElementsByClassName('d1')[0];
     this.DECK2 = document.getElementsByClassName('d2')[0];
-    this.DECK2.style.pointerEvents = 'none';
+    console.log(this.DECK2)
+    if(this.DECK2){
+      this.DECK2.style.pointerEvents = 'none';
+    }else{
+      console.log('this.deck2', this.DECK2);
+    }
+    
   }
 
   shuffleArray(arr) {
@@ -101,10 +105,9 @@ class Game extends Component {
     } else {
       let lastCard = this.state.lastElement;
       this.DECK2.style.pointerEvents = 'none';
-      this.DECK1.style.pointerEvents = 'auto';
+     
 
       if (cardValue === this.state.lastCard) {
-       // console.log(cardValue, 'is matched');
         element.style.pointerEvents = 'none';
         lastCard.style.pointerEvents = 'none';
         isMatch++;
@@ -120,7 +123,7 @@ class Game extends Component {
           totalMatch: state.totalMatch + isMatch,
         }),
         () => {
-          console.log('Total Match : ', this.state.totalMatch);
+          this.DECK1.style.pointerEvents = 'auto';
           if (this.state.totalMatch === this.state.setCount) {
             this.handleGameOver();
           }
@@ -131,16 +134,15 @@ class Game extends Component {
 
   handleGameOver(){
       let playerName = window.prompt(`Game Over! Your score is : ${this.state.turns} \n Enter your name :`);
-      let currResult = {
+      this.saveScore({
         name: playerName,
         turns: this.state.turns,
-      };
-      this.saveScore(currResult);
+      });
       
   }
 
   render() {
-      console.log(this.state)
+//console.log(this.state)
     let deck1,
       deck2,     
       turns = 0,
@@ -148,7 +150,7 @@ class Game extends Component {
       resetScoreButton = <></>;
     if (this.state && this.state.deck1 && this.state.deck2) {
       turns = this.state.turns;
-        console.log(this.state.deck1)
+       
       deck1 = (
         <Deck
           cards={this.state.deck1}
@@ -166,14 +168,14 @@ class Game extends Component {
     }
     if (this.state && this.state.result && this.state.result.length !== 0) {
       scoreBoard = <ScoreTable scores={this.state.result} />;
-      resetScoreButton = <button className="button resetButton" onClick={this.handleResetScore}>Reset High Score</button>
+      resetScoreButton = <button className="buttons resetButton" onClick={this.handleResetScore}>Reset High Score</button>
       
     }
 
     return (
       <div className="App">
         <div className="App-header">
-          <button className="button playButton" onClick={this.handleShuffle}>
+          <button className="buttons playButton" onClick={this.handleShuffle}>
             Play / Shuffle
           </button>
         {resetScoreButton}

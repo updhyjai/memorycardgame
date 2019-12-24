@@ -27,7 +27,7 @@ app.get('/draw',(req,res)=>{
     request('https://deckofcardsapi.com/api/deck/new/draw/?count=9',(err,response,body)=>{
         
             console.log('Err: ',err);
-       // console.log(body);
+    //    console.log(body);
         res.send(body);
     })
 })
